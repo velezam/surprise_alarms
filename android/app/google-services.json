@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "723908145827",
+    "project_id": "surprise-alarms",
+    "storage_bucket": "surprise-alarms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723908145827:android:b89c783ca0d2508b858516",
+        "android_client_info": {
+          "package_name": "com.example.surprise_alarms"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDxF0D3yOFYk9oNvbUXJESH7y9gBexS34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

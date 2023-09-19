@@ -1,0 +1,6 @@
+{
+  "appTitle": "surprise_alarms",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
