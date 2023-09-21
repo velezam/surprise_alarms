@@ -4,16 +4,6 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -62,7 +52,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBrdrwnoQPDE2-cj7Ae8H3zWzE1vgTCdSU',
+    apiKey: 'AIzaSyBTBCnFxAls_xK4Sz-mukC4PKvnTlJ5TCk',
     appId: '1:723908145827:ios:e68fd14a9676d575858516',
     messagingSenderId: '723908145827',
     projectId: 'surprise-alarms',
@@ -71,7 +61,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBrdrwnoQPDE2-cj7Ae8H3zWzE1vgTCdSU',
+    apiKey: 'AIzaSyBTBCnFxAls_xK4Sz-mukC4PKvnTlJ5TCk',
     appId: '1:723908145827:ios:292ca5be5b255a1d858516',
     messagingSenderId: '723908145827',
     projectId: 'surprise-alarms',

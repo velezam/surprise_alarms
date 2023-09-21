@@ -1,11 +1,15 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import 'src/app.dart';
+import 'src/android/android_app.dart';
+import 'src/ios/ios_app.dart';
 import 'src/settings/settings_controller.dart';
 import 'src/settings/settings_service.dart';
 
-// Import firebase core plugin and configuration file
+// Firebase imports
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -18,8 +22,8 @@ void main() async {
   // This prevents a sudden theme change when the app is first displayed.
   await settingsController.loadSettings();
 
-    // Load dotenv variables
-  await dotenv.load(fileName: '.env');
+  // Load dotenv variables
+  // await dotenv.load(fileName: 'assets/.env');
 
   // Initialize Firebase
   await Firebase.initializeApp(
@@ -29,5 +33,17 @@ void main() async {
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
-  runApp(MyApp(settingsController: settingsController));
+
+  // Check for user platform and run corresponding app layout
+  if (kIsWeb) {
+    return runApp(AndroidApp(settingsController: settingsController));
+  }
+  switch (Platform.operatingSystem) {
+    case 'android':
+      return runApp(AndroidApp(settingsController: settingsController));
+    case 'ios' || 'macos':
+      return runApp(const IosApp());
+    default:
+      return print('Unsupported platform');
+  }
 }
